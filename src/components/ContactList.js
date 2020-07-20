@@ -1,5 +1,6 @@
 import React from 'react'
 import Contact from './ContactItem'
+import PropTypes from 'prop-types'
 
 const ContactList = ({ contacts }) => {
   return (
@@ -11,6 +12,10 @@ const ContactList = ({ contacts }) => {
         />)
     }</div>
   )
+}
+
+ContactList.propTypes = {
+  contacts: PropTypes.array
 }
 
 export default ContactList
