@@ -1,5 +1,5 @@
 import React from 'react'
-import Contact from './ContactItem'
+import Contact from './ContactItem/ContactItem'
 import PropTypes from 'prop-types'
 
 const ContactList = ({ contacts }) => {
