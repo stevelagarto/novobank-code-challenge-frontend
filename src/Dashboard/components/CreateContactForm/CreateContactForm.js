@@ -22,44 +22,47 @@ const CreateContactForm = ({ createContact, toggleCreateContactForm, errorMessag
 
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.title}>ADD CONTACT</div>
-        <input
-          name="first_name"
-          value={formValues.first_name}
-          onChange={handleOnChange}
-          required
-          type="text"
-          className={styles.textInput}
-          placeholder="First Name"
-        />
-        <input
-          name="last_name"
-          value={formValues.last_name}
-          onChange={handleOnChange}
-          required
-          type="text"
-          className={styles.textInput}
-          placeholder="Last Name"
-        />
-        <input
-          name="email"
-          value={formValues.email}
-          onChange={handleOnChange}
-          required
-          type="email"
-          className={styles.textInput}
-          placeholder="Email"
-        />
-        <input
-          name="phone"
-          value={formValues.phone}
-          onChange={handleOnChange}
-          required
-          type="number"
-          className={styles.textInput}
-          placeholder="Phone"
-        />
+        <div className={styles.inputContainer}>
+          <input
+            name="first_name"
+            value={formValues.first_name}
+            onChange={handleOnChange}
+            required
+            type="text"
+            className={styles.textInput}
+            placeholder="First Name"
+          />
+          <input
+            name="last_name"
+            value={formValues.last_name}
+            onChange={handleOnChange}
+            required
+            type="text"
+            className={styles.textInput}
+            placeholder="Last Name"
+          />
+          <input
+            name="email"
+            value={formValues.email}
+            onChange={handleOnChange}
+            required
+            type="email"
+            className={styles.textInput}
+            placeholder="Email"
+          />
+          <input
+            name="phone"
+            value={formValues.phone}
+            onChange={handleOnChange}
+            required
+            type="number"
+            className={styles.textInput}
+            placeholder="Phone"
+          />
+        </div>
+
         <div className={styles.buttonContainer}>
-          <input type="submit" className={styles.button} />
+          <input type="submit" value="Add" className={styles.button} />
           <input
             type="button"
             value="Cancel"

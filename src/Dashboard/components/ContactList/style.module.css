@@ -1,6 +1,6 @@
 .gridContainer {
   width: 70%;
-  max-height: 600px;
+  max-height: 500px;
   overflow-y: scroll;
   display: grid;
   grid-column-gap: 10px;
