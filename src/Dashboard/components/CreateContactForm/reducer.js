@@ -15,8 +15,6 @@ export const reducer = (state, action) => {
         ...state,
         [action.name]: action.value
       }
-    case RESET:
-      return initialFormValues
     default:
       return initialFormValues
   }

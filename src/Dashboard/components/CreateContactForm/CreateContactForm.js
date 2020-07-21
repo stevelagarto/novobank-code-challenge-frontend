@@ -1,9 +1,9 @@
 import React, { useReducer } from 'react'
 import PropTypes from 'prop-types'
 
-import { reducer, initialFormValues, setField, reset } from './reducer'
+import { reducer, initialFormValues, setField } from './reducer'
 
-const CreateContactForm = ({ createContact }) => {
+const CreateContactForm = ({ createContact, toggleCreateContactForm }) => {
   const [formValues, dispatch] = useReducer(reducer, initialFormValues)
 
   function handleOnChange (event) {
@@ -13,7 +13,6 @@ const CreateContactForm = ({ createContact }) => {
   function handleSubmit (event) {
     event.preventDefault()
     createContact(formValues)
-    dispatch(reset())
   }
 
   return (
@@ -48,12 +47,14 @@ const CreateContactForm = ({ createContact }) => {
         type="number"
       />
       <input type="submit" />
+      <input type="button" value="Cancel" onClick={toggleCreateContactForm} />
     </form>
   )
 }
 
 CreateContactForm.propTypes = {
-  createContact: PropTypes.func
+  createContact: PropTypes.func,
+  toggleCreateContactForm: PropTypes.func
 }
 
 export default CreateContactForm
