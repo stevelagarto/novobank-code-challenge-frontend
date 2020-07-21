@@ -6,9 +6,7 @@ import styles from './style.module.css'
 const InitialLetter = ({ letter }) => {
   return (
     <div className={styles.initialLetter}>
-      <div
-        className={styles.container}>{letter}
-      </div>
+      <div className={styles.container}>{letter}</div>
     </div>
   )
 }

@@ -13,38 +13,29 @@ const ContactList = ({ contacts }) => {
     contacts.forEach((contact) => {
       if (initialLetter.toLowerCase() !== contact.first_name[0].toLowerCase()) {
         initialLetter = contact.first_name[0]
-        structuredContact.push(<InitialLetter key={initialLetter} letter={initialLetter.toUpperCase()} />)
-        structuredContact.push(<Contact
-          key={contact.id}
-          contact={contact}
-        />)
+        structuredContact.push(
+          <InitialLetter
+            key={initialLetter}
+            letter={initialLetter.toUpperCase()}
+          />
+        )
+        structuredContact.push(<Contact key={contact.id} contact={contact} />)
       } else {
-        structuredContact.push(<Contact
-          key={contact.id}
-          contact={contact}
-        />)
+        structuredContact.push(<Contact key={contact.id} contact={contact} />)
       }
     })
 
     return structuredContact
   }
 
-  const structuredContact = (phonebookStructure(contacts))
+  const structuredContact = phonebookStructure(contacts)
 
   return (
     <div className={styles.gridContainer}>
-      <div className={styles.gridItem}>
-        First Name
-      </div>
-      <div className={styles.gridItem}>
-        Last Name
-      </div>
-      <div className={styles.gridItem}>
-        Email
-      </div>
-      <div className={styles.gridItem}>
-        Phone
-      </div>
+      <div className={styles.gridItem}>First Name</div>
+      <div className={styles.gridItem}>Last Name</div>
+      <div className={styles.gridItem}>Email</div>
+      <div className={styles.gridItem}>Phone</div>
       {structuredContact}
     </div>
   )

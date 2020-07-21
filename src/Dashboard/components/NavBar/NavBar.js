@@ -8,8 +8,13 @@ import styles from './style.module.css'
 const NavBar = ({ toggleCreateContactForm, contacts }) => {
   return (
     <div className={styles.navBar}>
-      <div className={styles.title}>PHONE BOOK ({contacts.length} contacts)</div>
-      <CreateContactButton toggleCreateContactForm={toggleCreateContactForm} className={styles.buttonContainer}/>
+      <div className={styles.title}>
+        PHONE BOOK ({contacts.length} contacts)
+      </div>
+      <CreateContactButton
+        toggleCreateContactForm={toggleCreateContactForm}
+        className={styles.buttonContainer}
+      />
     </div>
   )
 }
