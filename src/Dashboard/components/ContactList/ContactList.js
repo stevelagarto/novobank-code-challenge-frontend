@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 import styles from './style.module.css'
 
-import Contact from './ContactItem/ContactItem'
-import InitialLetter from './InitialLetter/InitialLetter.js'
+import Contact from './ContactItem'
+import InitialLetter from './InitialLetter'
 
 const ContactList = ({ contacts }) => {
   const phonebookStructure = (contacts) => {

@@ -6,14 +6,14 @@
   width: 100%;
 }
 
+.endLine {
+  min-height: 15px;
+  width: 100%;
+}
+
 .message {
   color: green;
   margin-top: 60px;
   padding: 5px;
   min-height: 25px;
-}
-
-.endLine {
-  min-height: 15px;
-  width: 100%;
 }
