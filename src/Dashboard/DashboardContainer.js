@@ -36,7 +36,7 @@ const DashboardContainer = () => {
   }
 
   return contacts.length > 0 ? (
-    <>
+    <div className={styles.container}>
       { showCreateContactForm
         ? <CreateContactForm
           createContact={handleCreateContact}
@@ -47,8 +47,8 @@ const DashboardContainer = () => {
       }
       <CreateContactButton toggleCreateContactForm= {toggleCreateContactForm} />
       <div className={styles.message}>{message}</div>
-      <ContactList contacts ={contacts}/>
-    </>
+      <ContactList contacts={contacts}/>
+    </div>
   ) : <div>LOADING</div>
 }
 

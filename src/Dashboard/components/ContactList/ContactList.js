@@ -1,16 +1,52 @@
 import React from 'react'
-import Contact from './ContactItem/ContactItem'
 import PropTypes from 'prop-types'
 
+import styles from './style.module.css'
+
+import Contact from './ContactItem/ContactItem'
+import InitialLetter from './InitialLetter/InitialLetter.js'
+
 const ContactList = ({ contacts }) => {
-  return (
-    <div>{
-      contacts.map((contact) =>
-        <Contact
+  const phonebookStructure = (contacts) => {
+    const structuredContact = []
+    let initialLetter = ''
+    contacts.forEach((contact) => {
+      if (initialLetter !== contact.first_name[0]) {
+        initialLetter = contact.first_name[0]
+        structuredContact.push(<InitialLetter key={initialLetter} letter={initialLetter.toUpperCase()} />)
+        structuredContact.push(<Contact
           key={contact.id}
           contact={contact}
         />)
-    }</div>
+      } else {
+        structuredContact.push(<Contact
+          key={contact.id}
+          contact={contact}
+        />)
+      }
+    })
+
+    return structuredContact
+  }
+
+  const structuredContact = (phonebookStructure(contacts))
+
+  return (
+    <div className={styles.gridContainer}>
+      <div className={styles.gridItem}>
+        First Name
+      </div>
+      <div className={styles.gridItem}>
+        Last Name
+      </div>
+      <div className={styles.gridItem}>
+        Email
+      </div>
+      <div className={styles.gridItem}>
+        Phone
+      </div>
+      {structuredContact}
+    </div>
   )
 }
 
