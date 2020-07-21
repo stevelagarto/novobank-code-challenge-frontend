@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import styles from './style.module.css'
+
 const CreateContactButton = ({ toggleCreateContactForm }) => {
   const handleClick = () => {
     toggleCreateContactForm()
@@ -9,8 +11,9 @@ const CreateContactButton = ({ toggleCreateContactForm }) => {
   return (
     <input
       type="button"
-      value="Create Contact"
+      value="Add Contact"
       onClick={handleClick}
+      className={styles.button}
     />
   )
 }

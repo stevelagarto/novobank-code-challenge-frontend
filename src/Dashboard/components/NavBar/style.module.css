@@ -1,0 +1,21 @@
+.navBar {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  background-color: rgb(221, 253, 220);
+  border-bottom: solid 1px rgb(166, 243, 163);
+}
+
+.title {
+  flex: 1;
+  margin-left: 20px;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.buttonContainer {
+  flex: 1;
+}

@@ -6,7 +6,8 @@ import styles from './style.module.css'
 
 import ContactList from './components/ContactList/ContactList'
 import CreateContactForm from './components/CreateContactForm/CreateContactForm'
-import CreateContactButton from './components/CreateContactButton/CreateContactButton'
+import NavBar from './components/NavBar/NavBar'
+
 import { sortContacts } from '../services/sortContacts'
 
 const DashboardContainer = () => {
@@ -16,13 +17,14 @@ const DashboardContainer = () => {
   const [showCreateContactForm, setShowCreateContactForm] = useState(false)
 
   useEffect(() => {
-    getAllContacts().then(contacts => setContacts(sortContacts(contacts)))
+    getAllContacts().then((contacts) => setContacts(sortContacts(contacts)))
   }, [])
 
   const handleCreateContact = async (contact) => {
     const createdContact = await createContact(contact)
-    if (Object.prototype.hasOwnProperty.call(createdContact, 'error')) setErrorMessage(createdContact.error)
-    else {
+    if (Object.prototype.hasOwnProperty.call(createdContact, 'error')) {
+      setErrorMessage(createdContact.error)
+    } else {
       setContacts(sortContacts([...contacts, createdContact]))
       toggleCreateContactForm()
       setMessage('Contact added Succesfully')
@@ -32,24 +34,29 @@ const DashboardContainer = () => {
   const toggleCreateContactForm = () => {
     setErrorMessage('')
     setMessage('')
-    setShowCreateContactForm(value => !value)
+    setShowCreateContactForm((value) => !value)
   }
 
   return contacts.length > 0 ? (
     <div className={styles.container}>
-      { showCreateContactForm
-        ? <CreateContactForm
+      {showCreateContactForm ? (
+        <CreateContactForm
           createContact={handleCreateContact}
           errorMessage={errorMessage}
-          toggleCreateContactForm= {toggleCreateContactForm}
+          toggleCreateContactForm={toggleCreateContactForm}
         />
-        : null
-      }
-      <CreateContactButton toggleCreateContactForm= {toggleCreateContactForm} />
+      ) : null}
+      <NavBar
+        toggleCreateContactForm={toggleCreateContactForm}
+        contacts={contacts}
+      />
       <div className={styles.message}>{message}</div>
-      <ContactList contacts={contacts}/>
+      <ContactList contacts={contacts} />
+      <div className={styles.endLine} />
     </div>
-  ) : <div>LOADING</div>
+  ) : (
+    <div>LOADING</div>
+  )
 }
 
 export default DashboardContainer

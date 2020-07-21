@@ -7,10 +7,11 @@
   height: 100%;
   background-color: rgba(88, 88, 88, 0.8);
   padding-top: 50px;
+  z-index: 1;
 }
 .textInput {
   outline: none;
-  border: 1px solid silver;
+  border: 1px solid transparent;
   border-radius: 5px;
   padding: 5px;
   padding-left: 10px;
@@ -19,19 +20,18 @@
 }
 
 .textInput:focus {
-  border-color:rgb(7, 155, 2);
+  border: 1px solid rgb(7, 155, 2);
 }
 
 .form {
   display: flex;
-  border-radius: 10px;
-  border: 2px solid rgb(166, 243, 163);
+  border: 1px solid rgb(166, 243, 163);
   flex-direction: column;
   align-items: center;
   width: 50%;
   background-color: white;
   padding: 20px;
-  max-width: 400px;
+  max-width: 300px;
   opacity: 100%;
 }
 
@@ -42,23 +42,22 @@
 }
 
 .button {
-  background-color: rgb(7, 155, 2);
+  background-color: rgb(1, 184, 92);
   margin: 5px;
   padding: 10px;
   cursor: pointer;
   border: 0px;
-  border-radius: 5px;
   outline: none;
   color: rgb(255, 255, 255);
   font-weight: bold;
 }
 
 .button:hover {
-  background-color: rgb(5, 109, 2);
+  background-color: rgb(2, 202, 102);
 }
 
 .button:focus {
-  background-color: rgb(151, 197, 1);
+  background-color: rgb(2, 202, 175);
 }
 
 .buttonContainer {
@@ -67,6 +66,15 @@
 
 .errorMessage {
   color: red;
-  height: 20px;
+  height: 10px;
 }
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(195, 245, 214, 0.8);
+  padding: 20px;
+}
+
 

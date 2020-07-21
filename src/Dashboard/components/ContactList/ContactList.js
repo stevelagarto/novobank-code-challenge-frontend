@@ -11,7 +11,7 @@ const ContactList = ({ contacts }) => {
     const structuredContact = []
     let initialLetter = ''
     contacts.forEach((contact) => {
-      if (initialLetter !== contact.first_name[0]) {
+      if (initialLetter.toLowerCase() !== contact.first_name[0].toLowerCase()) {
         initialLetter = contact.first_name[0]
         structuredContact.push(<InitialLetter key={initialLetter} letter={initialLetter.toUpperCase()} />)
         structuredContact.push(<Contact
