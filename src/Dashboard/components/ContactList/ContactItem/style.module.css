@@ -1,0 +1,14 @@
+.field {
+  background-color: beige;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.gridItem {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  margin: 2px;
+  text-align: center;
+  max-width: 200px;
+  overflow-x: scroll;
+}
