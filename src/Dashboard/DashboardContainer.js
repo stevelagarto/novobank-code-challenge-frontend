@@ -55,7 +55,19 @@ const DashboardContainer = () => {
       <div className={styles.endLine} />
     </div>
   ) : (
-    <div>LOADING</div>
+    <div>
+      <NavBar
+        toggleCreateContactForm={toggleCreateContactForm}
+        contacts={contacts}
+      />
+      {showCreateContactForm ? (
+        <CreateContactForm
+          createContact={handleCreateContact}
+          errorMessage={errorMessage}
+          toggleCreateContactForm={toggleCreateContactForm}
+        />
+      ) : null}
+    </div>
   )
 }
 
