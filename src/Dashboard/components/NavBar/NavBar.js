@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import CreateContactButton from '../../components/CreateContactButton/CreateContactButton'
+import CreateContactButton from './CreateContactButton/CreateContactButton'
 
 import styles from './style.module.css'
 

@@ -4,9 +4,9 @@ import { getAllContacts, createContact } from '../services/api'
 
 import styles from './style.module.css'
 
-import ContactList from './components/ContactList/ContactList'
-import CreateContactForm from './components/CreateContactForm/CreateContactForm'
-import NavBar from './components/NavBar/NavBar'
+import ContactList from './components/ContactList'
+import CreateContactForm from './components/CreateContactForm'
+import NavBar from './components/NavBar'
 
 import { sortContacts } from '../services/sortContacts'
 
