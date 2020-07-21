@@ -5,7 +5,11 @@ import styles from './style.module.css'
 
 import { reducer, initialFormValues, setField } from './reducer'
 
-const CreateContactForm = ({ createContact, toggleCreateContactForm, errorMessage }) => {
+const CreateContactForm = ({
+  createContact,
+  toggleCreateContactForm,
+  errorMessage
+}) => {
   const [formValues, dispatch] = useReducer(reducer, initialFormValues)
 
   function handleOnChange (event) {
@@ -19,7 +23,6 @@ const CreateContactForm = ({ createContact, toggleCreateContactForm, errorMessag
 
   return (
     <div className={styles.container}>
-
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.title}>ADD CONTACT</div>
         <div className={styles.inputContainer}>
@@ -60,7 +63,6 @@ const CreateContactForm = ({ createContact, toggleCreateContactForm, errorMessag
             placeholder="Phone"
           />
         </div>
-
         <div className={styles.buttonContainer}>
           <input type="submit" value="Add" className={styles.button} />
           <input
