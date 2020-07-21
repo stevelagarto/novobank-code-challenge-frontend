@@ -9,6 +9,11 @@ You can find the Back End repository at [https://github.com/stevelagarto/novoban
 
 ## Cheatsheet
 
+Create a .env file with this structure:
+
+SKIP_PREFLIGHT_CHECK=true
+REACT_APP_BACKEND_URL="http://localhost:3000"
+
 Description | Command
 ------------| -------
 Install dependencies | yarn
